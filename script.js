@@ -22,4 +22,7 @@ async function showMessage() {
 }
 
 //button click
-button.addEventListener("Click", showMessage);
+button.addEventListener("click", async function(event) {
+    event.preventDefault();
+    await showMessage();
+});
