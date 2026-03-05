@@ -24,5 +24,5 @@ async function showMessage() {
 //button click
 button.addEventListener("click", async function(event) {
     event.preventDefault();
-    await showMessage();
+    await showMessage(); ..
 });
