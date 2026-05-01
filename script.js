@@ -15,9 +15,9 @@ button.addEventListener("click", async function () {
   output.textContent = "";
 
   // Basic validation
-  if (!text || isNaN(delayTime) || delayTime < 0) {
-    output.textContent = "Please enter valid text and delay.";
-    return;
+ if (text === "" || delayValue === "" || isNaN(delayTime) || delayTime < 0) {
+  output.textContent = "Please enter valid text and delay.";
+  return;
   }
 
   // Wait for the delay using async/await
