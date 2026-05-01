@@ -1,28 +1,28 @@
-//your JS code here. If required.
-
-const textInput= document.getElementById("text");
-const delayInput= document.getElementById("delay");
 const button = document.getElementById("btn");
-const outputDiv= document.getElementById("output");
 
-//function to create delay
-function wait(ms) {
-    return new Promise((resolve) =>{
-        setTimeout(resolve,ms);
-    });
+function delay(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
 }
 
-//async function
-async function showMessage() {
-    const message= textInput.ariaValueMax;
-    const delay=Number(delayInput.value);
+button.addEventListener("click", async function () {
+  const text = document.getElementById("text").value;
+  const delayTime = parseInt(document.getElementById("delay").value);
+  const output = document.getElementById("output");
 
-    await wait(delay);
-    outputDiv.textContent=message;
-}
+  // Clear previous output
+  output.textContent = "";
 
-//button click
-button.addEventListener("click", async function(event) {
-    event.preventDefault();
-    await showMessage(); ..
+  // Basic validation
+  if (!text || isNaN(delayTime) || delayTime < 0) {
+    output.textContent = "Please enter valid text and delay.";
+    return;
+  }
+
+  // Wait for the delay using async/await
+  await delay(delayTime);
+
+  // Display the message
+  output.textContent = text;
 });
