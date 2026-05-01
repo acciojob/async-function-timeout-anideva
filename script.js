@@ -7,7 +7,7 @@ function delay(ms) {
 }
 
 button.addEventListener("click", async function () {
-  const text = document.getElementById("text").value;
+  const text = document.getElementById("text").value.trim(and tr);
   const delayTime = parseInt(document.getElementById("delay").value);
   const output = document.getElementById("output");
 
